@@ -23,11 +23,11 @@ leakedzone.com 视频下载器，download video/photos from leakedzone.com
 
 ## 代码说明
 
-因为客观原因，代码中默认设置了 http://127.0.0.1:1081 的HTTP代理，如果不需要使用代理的话可以把相应行的参数删除 （从-proxy或者--proxy开始删到行尾），或者使用 ```lz-noproxy.ps1```
+因为客观原因，代码中默认设置了 http://127.0.0.1:1081 的HTTP代理，如果不需要使用代理的话可以把相应行的参数删除 （从-proxy或者--proxy开始删到行尾）
 
 ffmpeg可以在[官方网站](https://ffmpeg.org/download.html)上找到 windows 编译版，放进一个文件夹内，然后在系统/高级/环境变量里面把 PATH 变量双击，加入有ffmpeg.exe的路径即可。不加的话 yt-dlp 会没有办法自动修复视频文件问题，导致下载的视频没有缩略图。
 
-PythonPip 安装慢的话可以设置镜像，如腾讯/阿里/163等。
+Python Pip 安装慢的话可以设置镜像，如腾讯/阿里/163等。
 
 ## 引用
 
