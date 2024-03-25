@@ -6,10 +6,20 @@ $Name = ([uri]$Url).Segments[-1].Trim('/')
 New-Item -ItemType Directory -Force -Path ($Name + "\Photos\")
 New-Item -ItemType Directory -Force -Path ($Name + "\Videos\")
 
+#Get Cookies, ugly but works
+$LoginParameters = @{
+    Uri             = "$($Url)"
+    SessionVariable = 'Session'
+    Method          = 'GET'
+}
+$LoginResponse = Invoke-WebRequest @LoginParameters
+$cookies = $LoginResponse.Headers.'Set-Cookie'.Split(',')
+$cookiestr = $cookies[0].Split(';') + ";"+$cookies[2].Split(';')
+
 $headers = @{
-'Accept-Encoding' = 'gzip, deflate'
-'Cookie' = 'XSRF-TOKEN=CHANGETHIS;cf_clearance=CHANGETHIS; leakedzone_session=CHANGETHIS'
-'X-Requested-With' = 'XMLHttpRequest'
+ 'Accept-Encoding' = 'gzip, deflate'
+ 'Cookie' = $cookiestr
+ 'X-Requested-With' = 'XMLHttpRequest'
 }
 
 $i = 0
