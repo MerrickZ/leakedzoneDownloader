@@ -7,7 +7,13 @@ This script is used to download video/photos from leakedzone.com
 > 2. [ffmpeg](https://ffmpeg.org)
 > 3. powershell
 
-## How to use
+## How to use ( modern way )
+
+1. Install yt-dlp, run ```winget install yt-dlp```
+2. Enable Powershell script execution policy in windows 10/11, run ```Set-ExecutionPolicy unrestricted```
+3. Execute the script ```lz.ps1``` and paste your URL.
+
+## How to use ( tranditional way )
 
 1. Install Python, run ```winget install python```
 2. Install yt-dlp, run ```pip install yt-dlp```
